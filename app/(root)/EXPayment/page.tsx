@@ -6,13 +6,13 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 const ExPayment = () => {
-  // const { user:USER } = useUser();
+  const { user } = useUser();
   const router = useRouter();
-  const user = {
-    id: "user_2pkDIq3QnmsJtN8G0u7JzBMN5PA",
-    emailAddress: "bang1smn1bang@gmail.com",
-    fullName: "samin asgary",
-  };
+  // const user = {
+  //   id: "user_2pkDIq3QnmsJtN8G0u7JzBMN5PA",
+  //   emailAddress: "bang1smn1bang@gmail.com",
+  //   fullName: "samin asgary",
+  // };
     // const user = {
     //   id: USER?.id,
     //   emailAddress: USER?.emailAddresses[0].emailAddress,
@@ -29,8 +29,8 @@ const ExPayment = () => {
 
   const customer = {
     clerkId: user?.id,
-    // email: user?.emailAddresses[0].emailAddress,
-    email: user?.emailAddress,
+    email: user?.emailAddresses[0].emailAddress,
+    // email: user?.emailAddress,
     name: user?.fullName,
   };
 
