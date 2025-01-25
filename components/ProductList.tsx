@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 
 const ProductList = async () => {
   const products = await getProducts();
+  
 
   return (
     <div className="flex flex-col items-center gap-10 py-8 px-5">
