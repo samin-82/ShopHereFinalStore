@@ -99,7 +99,7 @@ const ExPayment = () => {
   return (
     <div>
       <div>
-        <div>{customer.clerkId}</div>
+        {/* <div>{customer.clerkId}</div> */}
         <div>{customer.name}</div>
         <div>{customer.email}</div>
       </div>
