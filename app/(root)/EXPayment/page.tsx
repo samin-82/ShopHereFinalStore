@@ -5,20 +5,22 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
+
 const ExPayment = () => {
   const { user } = useUser();
+  console.log(user);
   const router = useRouter();
   // const user = {
   //   id: "user_2pkDIq3QnmsJtN8G0u7JzBMN5PA",
   //   emailAddress: "bang1smn1bang@gmail.com",
   //   fullName: "samin asgary",
   // };
-    // const user = {
-    //   id: USER?.id,
-    //   emailAddress: USER?.emailAddresses[0].emailAddress,
-    //   // email: USER?.emailAddress,
-    //   fullName: USER?.fullName,
-    // };
+  // const user = {
+  //   id: USER?.id,
+  //   emailAddress: USER?.emailAddresses[0].emailAddress,
+  //   // email: USER?.emailAddress,
+  //   fullName: USER?.fullName,
+  // };
   const cart = useCart();
 
   const total = cart.cartItems.reduce(
