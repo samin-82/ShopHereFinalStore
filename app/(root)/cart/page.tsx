@@ -55,21 +55,25 @@ const Cart = () => {
       if (!user) {
         router.push("sign-in");
       } else {
-        // const res = await fetch(
-        //   `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
-        //   {
-        //     // mode: "no-cors",
-
-        //     method: "POST",
-        //     body: JSON.stringify({ cartItems: cart.cartItems, customer }),
-        //     // body: JSON.stringify({ customer:'samin',cartItems:'banana' }),
-        //   }
-        // );
-        // const data = await res.json();
+        const res = await fetch(
+          // `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+          `/api/payment`,
+          {
+            method: "POST",
+   
+            body: JSON.stringify({ name: "tesssssst" }),
+            // body: JSON.stringify({ cartItems: cart.cartItems, customer }),
+            // body: JSON.stringify({ customer:'samin',cartItems:'banana' }),
+          }
+        );
+        const data = await res.json();
         // window.location.href = data.url;
-        // console.log(data);
+        console.log("tesssssssst for payment");
+        const authority = data.data.data.authority;
+        console.log(authority);
+// Location: https://www.zarinpal.com/pg/StartPay/ . $result['data']["authority"]
 
-        router.push("EXPayment");
+        router.push(` https://sandbox.zarinpal.com/pg/StartPay/${authority}`);
       }
     } catch (err) {
       console.log("[checkout_POST]", err);
